@@ -25,6 +25,12 @@ todosRouter.get("/:id", (req, res) => {
 
 });
 
+todosRouter.post("/", (req, res) => {
+  console.log(req.body);
+  console.log("aaa");
+  res.send("received");
+});
+
 async function getRandomText() {
   const api = new ChatGPTAPI({
     apiKey: process.env.CHAT_GPT_API_KEY
