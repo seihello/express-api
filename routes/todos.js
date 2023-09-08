@@ -1,5 +1,5 @@
 import express from "express";
-import data from "../data/todos.json" assert { type: "json"};
+import todos from "../data/todos.json" assert { type: "json"};
 
 const todosRouter = express.Router();
 
@@ -8,11 +8,7 @@ todosRouter.get("/", (req, res) => {
 });
 
 todosRouter.get("/:id", (req, res) => {
-  // console.log(data);
-  const todo = data.find((element) => {
-    return element.id === +req.params.id
-  });
-  console.log(todo);
+  const todo = todos.find((element) => element.id === +req.params.id);
 
   if (!todo) {
     res.status(404).send("This TODO doesn't exist.");
