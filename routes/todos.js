@@ -17,7 +17,7 @@ todosRouter.get("/:id", (req, res) => {
   if (!todo) {
     res.status(404).send("This TODO doesn't exist.");
   } else {
-    res.status(200).send("This TODO exists.");
+    res.status(200).send(todo);
   }
 
 });
